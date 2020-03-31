@@ -12,14 +12,14 @@ class SimulateAPICall extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'command:simulateApiCall';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'This command will simulate api call from our server';
 
     /**
      * Create a new command instance.
@@ -38,6 +38,7 @@ class SimulateAPICall extends Command
      */
     public function handle()
     {
+        // Logging can be done in file like this and in the database, depending on internal agreements in the company
         Log::info('[34] firstname: Helen, timezone: \'America/Los_Angeles\'');
     }
 }
