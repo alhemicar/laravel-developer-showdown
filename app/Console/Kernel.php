@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\ChangeUsersCommand;
+use App\Console\Commands\SimulateAPICall;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -14,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        ChangeUsersCommand::class
+        ChangeUsersCommand::class,
+        SimulateAPICall::class,
     ];
 
     /**
@@ -25,7 +27,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        // Since in the test example we have limited amount of requests, we can schedule the call to the API layer so that we don't go overboard with calls
+        // $schedule->command('simulateApiCall')->hourly();
     }
 
     /**
